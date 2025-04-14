@@ -78,6 +78,7 @@ static const char *colors[][3]      = {
     [SchemeLayoutMS]   = { pinky,   black,  black },
     [SchemeLayoutPC]   = { orange,  black,  black },
     [SchemeLayoutVV]   = { blue,    black,  black },
+    [SchemeLayoutOP]   = { red,    black,  black },
 };
 
 /* tagging */
@@ -90,7 +91,8 @@ static char *tags[] = { "", "", "", "", "", "", "", "", 
 
 static const char* firefox[] = { "firefox", NULL };
 static const char* vivaldi[] = { "vivaldi", NULL };
-static const char* eww[] = { "eww", "open" , "eww", NULL };
+static const char* brave[] = { "brave", NULL };
+static const char* opera[] = { "opera", NULL };
 static const char* discord[] = { "discord", "open" , "discord", NULL };
 static const char* telegram[] = { "telegram-desktop", "open" , "telegram-desktop", NULL };
 static const char* mintstick[] = { "mintstick", "-m", "iso", NULL};
@@ -101,7 +103,8 @@ static const Launcher launchers[] = {
 
     { discord,       "ﱲ" },
     { firefox,       "" },
-    { eww,           "數" },
+    { brave,         "" },
+    { opera,         "" },
     { mintstick,     "虜" },
     { pavucontrol,   "墳" },
     { telegram,      "" },
@@ -274,7 +277,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_w,       setborderpx,    {.i = default_border } },
 
     // kill dwm
-    //{ MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("killall bar.sh chadwm") },
+    { ControlMask|Mod1Mask,             XK_Delete, quit,            {0} },
 
     // kill window
     { MODKEY,                           XK_q,       killclient,     {0} },
@@ -337,9 +340,9 @@ static const Button buttons[] = {
     */
     { ClkClientWin,         MODKEY,         Button1,        moveorplace,    {.i = 0} },
     { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-    //{ ClkClientWin,         ControlMask,    Button1,        dragmfact,      {0} },
-    //{ ClkClientWin,         ControlMask,    Button3,        dragcfact,      {0} },
+    //{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+    { ClkClientWin,         MODKEY,			Button3,        dragmfact,      {0} },
+    //{ ClkClientWin,         MODKEY,    	Button3,        dragcfact,      {0} },
     { ClkTagBar,            0,              Button1,        view,           {0} },
     { ClkTagBar,            0,              Button3,        toggleview,     {0} },
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },

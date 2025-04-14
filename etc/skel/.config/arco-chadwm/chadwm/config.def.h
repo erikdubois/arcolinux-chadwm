@@ -78,6 +78,7 @@ static const char *colors[][3]      = {
     [SchemeLayoutMS]   = { pinky,   black,  black },
     [SchemeLayoutPC]   = { orange,  black,  black },
     [SchemeLayoutVV]   = { blue,    black,  black },
+    [SchemeLayoutOP]   = { red,    black,  black },
 };
 
 /* tagging */
@@ -90,7 +91,8 @@ static char *tags[] = { "", "", "", "", "", "", "", "", 
 
 static const char* firefox[] = { "firefox", NULL };
 static const char* vivaldi[] = { "vivaldi", NULL };
-static const char* eww[] = { "eww", "open" , "eww", NULL };
+static const char* brave[] = { "brave", NULL };
+static const char* opera[] = { "opera", NULL };
 static const char* discord[] = { "discord", "open" , "discord", NULL };
 static const char* telegram[] = { "telegram-desktop", "open" , "telegram-desktop", NULL };
 static const char* mintstick[] = { "mintstick", "-m", "iso", NULL};
@@ -101,7 +103,8 @@ static const Launcher launchers[] = {
 
     { discord,       "ﱲ" },
     { firefox,       "" },
-    { eww,           "數" },
+    { brave,         "" },
+    { opera,         "" },
     { mintstick,     "虜" },
     { pavucontrol,   "墳" },
     { telegram,      "" },
@@ -233,14 +236,14 @@ static const Key keys[] = {
     { MODKEY|ControlMask|ShiftMask,     XK_o,       incrogaps,      {.i = -1 } },
 
     // inner+outer hori, vert gaps 
-    { MODKEY|ControlMask,               XK_6,       incrihgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_6,       incrihgaps,     {.i = -1 } },
-    { MODKEY|ControlMask,               XK_7,       incrivgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_7,       incrivgaps,     {.i = -1 } },
-    { MODKEY|ControlMask,               XK_8,       incrohgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_8,       incrohgaps,     {.i = -1 } },
-    { MODKEY|ControlMask,               XK_9,       incrovgaps,     {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_9,       incrovgaps,     {.i = -1 } },
+    { MODKEY|ControlMask,               XK_section,           incrihgaps,     {.i = +1 } },
+    { MODKEY|ControlMask|ShiftMask,     XK_section,           incrihgaps,     {.i = -1 } },
+    { MODKEY|ControlMask,               XK_egrave,            incrivgaps,     {.i = +1 } },
+    { MODKEY|ControlMask|ShiftMask,     XK_egrave,            incrivgaps,     {.i = -1 } },
+    { MODKEY|ControlMask,               XK_exclam,            incrohgaps,     {.i = +1 } },
+    { MODKEY|ControlMask|ShiftMask,     XK_exclam,            incrohgaps,     {.i = -1 } },
+    { MODKEY|ControlMask,               XK_ccedilla,          incrovgaps,     {.i = +1 } },
+    { MODKEY|ControlMask|ShiftMask,     XK_ccedilla,          incrovgaps,     {.i = -1 } },
 
     { MODKEY|ControlMask|ShiftMask,     XK_d,       defaultgaps,    {0} },
 
@@ -261,10 +264,10 @@ static const Key keys[] = {
     { MODKEY,                           XK_space,   setlayout,      {0} },
     { MODKEY|ControlMask,               XK_p,       cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_m,       cyclelayout,    {.i = +1 } },
-    { MODKEY,                           XK_0,       view,           {.ui = ~0 } },
-    { MODKEY|ShiftMask,                 XK_0,       tag,            {.ui = ~0 } },
+    { MODKEY,                           XK_agrave,  view,           {.ui = ~0 } },
+    { MODKEY|ShiftMask,                 XK_agrave,  tag,            {.ui = ~0 } },
     { MODKEY,                           XK_comma,   focusmon,       {.i = -1 } },
-    { MODKEY,                           XK_period,  focusmon,       {.i = +1 } },
+    { MODKEY,                           XK_semicolon,  focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,                 XK_Left,    tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask,                 XK_Right,   tagmon,         {.i = +1 } },
 
@@ -290,26 +293,26 @@ static const Key keys[] = {
 
     // qwerty keyboard
 
-    TAGKEYS(                            XK_1,                       0)
-    TAGKEYS(                            XK_2,                       1)
-    TAGKEYS(                            XK_3,                       2)
-    TAGKEYS(                            XK_4,                       3)
-    TAGKEYS(                            XK_5,                       4)
-    TAGKEYS(                            XK_6,                       5)
-    TAGKEYS(                            XK_7,                       6)
-    TAGKEYS(                            XK_8,                       7)
-    TAGKEYS(                            XK_9,                       8)
+    //TAGKEYS(                            XK_1,                       0)
+    //TAGKEYS(                            XK_2,                       1)
+    //TAGKEYS(                            XK_3,                       2)
+    //TAGKEYS(                            XK_4,                       3)
+    //TAGKEYS(                            XK_5,                       4)
+    //TAGKEYS(                            XK_6,                       5)
+    //TAGKEYS(                            XK_7,                       6)
+    //TAGKEYS(                            XK_8,                       7)
+    //TAGKEYS(                            XK_9,                       8)
 
     // azerty keyboard (Belgium)
-    // TAGKEYS(                               XK_ampersand,                0)
-    // TAGKEYS(                               XK_eacute,                   1)
-    // TAGKEYS(                               XK_quotedbl,                 2)
-    // TAGKEYS(                               XK_apostrophe,               3)
-    // TAGKEYS(                               XK_parenleft,                4)
-    // TAGKEYS(                               XK_section,                  5)
-    // TAGKEYS(                               XK_egrave,                   6)
-    // TAGKEYS(                               XK_exclam,                   7)
-    // TAGKEYS(                               XK_ccedilla,                 8)
+    TAGKEYS(                               XK_ampersand,                0)
+    TAGKEYS(                               XK_eacute,                   1)
+    TAGKEYS(                               XK_quotedbl,                 2)
+    TAGKEYS(                               XK_apostrophe,               3)
+    TAGKEYS(                               XK_parenleft,                4)
+    TAGKEYS(                               XK_section,                  5)
+    TAGKEYS(                               XK_egrave,                   6)
+    TAGKEYS(                               XK_exclam,                   7)
+    TAGKEYS(                               XK_ccedilla,                 8)
 
 };
 

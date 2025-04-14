@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output None-1-1 --off
+xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output None-1-1 --off
 
 #xrdb merge ~/.Xresources 
 #xbacklight -set 10 &
@@ -13,7 +13,7 @@ function run {
   fi
 }
 
-
+run "dex /usr/share/applications/signal-tray.desktop"
 run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
 
 #for virtualbox
@@ -33,24 +33,27 @@ run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
 #run "autorandr horizontal"
 run "nm-applet"
 #run "pamac-tray"
-#run "variety"
+#run "protonvpn-app"
+run "variety -n"
+run "flameshot"
 run "xfce4-power-manager"
+run "xfce4-clipman"
 run "blueberry-tray"
 run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-picom -b  --config ~/.config/arco-chadwm/picom/picom.conf &
-#picom &
+#picom -b  --config ~/.config/arco-chadwm/picom/picom.conf &
+picom &
 run "numlockx on"
 run "volumeicon"
 #run "pa-applet"
 sxhkd -c ~/.config/arco-chadwm/sxhkd/sxhkdrc &
 #run "nitrogen --restore"
-run "conky -c $HOME/.config/arco-chadwm/conky/system-overview"
+#run "conky -c $HOME/.config/arco-chadwm/conky/system-overview"
 #you can set wallpapers in themes as well
 #feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
 #feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
-feh --bg-fill ~/.config/arco-chadwm/wallpaper/chadwm1.jpg &
-#feh --bg-fill ~/.config/arco-chadwm/wallpaper/chadwm1.png &
+#feh --bg-fill ~/.config/arco-chadwm/wallpaper/chadwm.jpg &
+feh --bg-fill ~/.config/arco-chadwm/wallpaper/chadwm2.jpg &
 #feh --randomize --bg-fill /home/erik/Insync/Apps/Wallhaven/*
 
 
@@ -61,12 +64,12 @@ feh --bg-fill ~/.config/arco-chadwm/wallpaper/chadwm1.jpg &
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 #run applications from startup
 
-#run "insync start"
+run "insync start"
 #run "spotify"
 #run "ckb-next -b"
 #run "discord"
 #run "telegram-desktop"
-#run "dropbox"
+run "dropbox"
 #run "/usr/bin/octopi-notifier"
 
 
