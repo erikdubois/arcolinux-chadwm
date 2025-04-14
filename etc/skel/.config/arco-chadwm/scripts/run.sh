@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output None-1-1 --off
+#xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output None-1-1 --off
 
 #xrdb merge ~/.Xresources 
 #xbacklight -set 10 &
@@ -14,7 +14,7 @@ function run {
 }
 
 run "dex /usr/share/applications/signal-tray.desktop"
-run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
+#run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
 
 #for virtualbox
 #run xrandr --output Virtual-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
