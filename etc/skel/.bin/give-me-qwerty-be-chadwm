@@ -33,7 +33,7 @@ echo
 
 user=$( who | cut -d ' ' -f1 | uniq)
 
-cp -v /home/$user/.config/arco-chadwm/chadwm/config.def-azerty.h /home/$user/.config/arco-chadwm/chadwm/config.def.h
+cp -v /home/$user/.config/arco-chadwm/chadwm/config.def-qwerty.h /home/$user/.config/arco-chadwm/chadwm/config.def.h
 if [ -f /home/$user/.config/arco-chadwm/chadwm/config.h ]; then
 	rm -v /home/$user/.config/arco-chadwm/chadwm/config.h
 fi
