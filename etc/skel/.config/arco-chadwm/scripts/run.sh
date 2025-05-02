@@ -64,12 +64,12 @@ feh --bg-fill ~/.config/arco-chadwm/wallpaper/chadwm2.jpg &
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 #run applications from startup
 
-run "insync start"
+#run "insync start"
 #run "spotify"
 #run "ckb-next -b"
 #run "discord"
 #run "telegram-desktop"
-run "dropbox"
+#run "dropbox"
 #run "/usr/bin/octopi-notifier"
 
 
