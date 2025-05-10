@@ -41,8 +41,12 @@ run "xfce4-clipman"
 run "blueberry-tray"
 run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-#picom -b  --config ~/.config/arco-chadwm/picom/picom.conf &
-picom &
+picom -b  --config ~/.config/arco-chadwm/picom/picom.conf &
+# picom -b  --config ~/.config/arco-chadwm/picom/picom-cachyos.conf &
+# picom -b  --config ~/.config/arco-chadwm/picom/picom-edu-dwm.conf &
+# picom -b  --config ~/.config/arco-chadwm/picom/picom-edu-nodwm.conf &
+# picom -b  --config ~/.config/arco-chadwm/picom/picom-original.conf &
+# picom --backend glx --vsync &
 run "numlockx on"
 run "volumeicon"
 #run "pa-applet"

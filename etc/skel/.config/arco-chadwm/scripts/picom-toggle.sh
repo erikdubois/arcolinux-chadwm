@@ -14,7 +14,7 @@ else
 
     if [[ -n $chosen && -f "$CONFIG_DIR/$chosen" ]]; then
         notify-send "Picom" "Starting picom with: $chosen"
-        picom -b --config "$CONFIG_DIR/$chosen"
+        picom -b --config "$CONFIG_DIR/$chosen" &
     else
         notify-send "Picom" "No valid selection made."
     fi
