@@ -22,10 +22,16 @@
 # reset - commit your changes or stash them before you merge
 # git reset --hard - personal alias - grh
 
+
 if [[ -f "./repo.sh" ]]; then
     echo "Found repo.sh, running it..."
     bash ./repo.sh
 fi
+
+wget "https://raw.githubusercontent.com/CachyOS/cachyos-picom-config/refs/heads/develop/etc/skel/.config/picom/picom.conf" -O ->> \
+/home/erik/DATA/EDU/edu-chadwm/etc/skel/.config/arco-chadwm/picom/picom-cachyos.conf
+
+https://raw.githubusercontent.com/CachyOS/cachyos-picom-config/refs/heads/develop/etc/skel/.config/picom/picom.conf
 
 # Below command will backup everything inside the project folder
 git add --all .
