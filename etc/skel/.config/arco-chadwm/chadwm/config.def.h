@@ -94,7 +94,7 @@ static const char* vivaldi[] = { "vivaldi", NULL };
 static const char* brave[] = { "brave", "--password-store=basic", "%U", NULL };
 static const char* opera[] = { "opera", NULL };
 static const char* discord[] = { "discord", "open" , "discord", NULL };
-static const char* telegram[] = { "telegram-desktop", "open" , "telegram-desktop", NULL };
+static const char* telegram[] = { "Telegram", "open" , "Telegram", NULL };
 static const char* mintstick[] = { "mintstick", "-m", "iso", NULL};
 static const char* pavucontrol[] = { "pavucontrol", NULL };
 
