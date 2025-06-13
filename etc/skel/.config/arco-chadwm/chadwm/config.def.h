@@ -128,7 +128,6 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           0,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
-    { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
     { "mintstick", NULL,      NULL,       0,            0,           0,           -1 },
     { "Nlogout",  NULL,       NULL,       0,            1,           1,           -1 },
 };

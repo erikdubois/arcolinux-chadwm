@@ -94,7 +94,7 @@ static const char* vivaldi[] = { "vivaldi", NULL };
 static const char* brave[] = { "brave", "--password-store=basic", "%U", NULL };
 static const char* opera[] = { "opera", NULL };
 static const char* discord[] = { "discord", "open" , "discord", NULL };
-static const char* telegram[] = { "telegram-desktop", "open" , "telegram-desktop", NULL };
+static const char* telegram[] = { "Telegram", "open" , "Telegram", NULL };
 static const char* mintstick[] = { "mintstick", "-m", "iso", NULL};
 static const char* pavucontrol[] = { "pavucontrol", NULL };
 
@@ -128,7 +128,6 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           0,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
-    { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
     { "mintstick", NULL,      NULL,       0,            0,           0,           -1 },
     { "Nlogout",  NULL,       NULL,       0,            1,           1,           -1 },
 };
